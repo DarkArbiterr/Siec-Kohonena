@@ -13,21 +13,28 @@ W funkcji *Animation* okreslona jest **liczba iteracji** (w pętli for). Można 
 > Jest to technika klastrowania danych, która pomaga zredukować wymiarowość danych i odzwierciedlić ich strukturę w dwuwymiarowej lub trójwymiarowej przestrzeni.
 
 ## Algorytm Sieci Kohonena
-**Inicjalizacja**: /Parametry to wysokość (*height*), szerokość (*width*) i wymiar (*dimension*) mapy SOM, 
+**Inicjalizacja**:\
+Parametry to wysokość (*height*), szerokość (*width*) i wymiar (*dimension*) mapy SOM, 
 współczynniki uczenia *alpha* i *sigma* (można je zmienić w funkcji *main*, domyślnie ustawione na **0.6 i 1.2**).
 
-**Funkcja znajdująca neuron**: /Znajduje neuron najbliższy do danego punktu (*start*) na mapie SOM. 
+**Funkcja znajdująca neuron**:\
+Znajduje neuron najbliższy do danego punktu (*start*) na mapie SOM. 
 Oblicza odległość między punktem a każdym neuronem i zwraca współrzędne najbliższego neuronu.
 
-**Funkcja Gaussa**: /Używana do obliczania wpływu sąsiadujących neuronów podczas aktualizacji wag. 
+**Funkcja Gaussa**:\
+Używana do obliczania wpływu sąsiadujących neuronów podczas aktualizacji wag. 
 Parametr *distance* to odległość między neuronem a punktem danych.
 
-**Funkcja Alpha**: /Funkcja aktualizacji współczynnika uczenia w czasie. Parametr *t* to aktualny krok czasowy.
+**Funkcja Alpha**:\
+Funkcja aktualizacji współczynnika uczenia w czasie. Parametr *t* to aktualny krok czasowy.
 
-**Aktualizacja wag neuronu**: /Aby zbliżyć je do punktu danych. Parametry to indeks neuronu (*record*), punkt danych (*dataPoint*), aktualny krok czasowy (*st*) i odległość między neuronem a punktem (*distance*).
+**Aktualizacja wag neuronu**:\
+Aby zbliżyć je do punktu danych. Parametry to indeks neuronu (*record*), punkt danych (*dataPoint*), aktualny krok czasowy (*st*) i odległość między neuronem a punktem (*distance*).
 
-**Aktualizacja sieci**: /Aktualizacja wag wszystkich neuronów na podstawie najlepszego neuronu i punktu danych. Parametry to najlepszy neuron (*bestNeuron*), punkt danych (*dataPoint*) i aktualny krok czasowy (*step*).
+**Aktualizacja sieci**:\
+Aktualizacja wag wszystkich neuronów na podstawie najlepszego neuronu i punktu danych. Parametry to najlepszy neuron (*bestNeuron*), punkt danych (*dataPoint*) i aktualny krok czasowy (*step*).
 
-**Trening**: /Proces treningu sieci. Wybiera losowy punkt danych, znajduje najlepszy neuron, a następnie aktualizuje wagi wszystkich neuronów na podstawie tego punktu danych.
+**Trening**:\
+Proces treningu sieci. Wybiera losowy punkt danych, znajduje najlepszy neuron, a następnie aktualizuje wagi wszystkich neuronów na podstawie tego punktu danych.
 
 Algorytm ten jest iteracyjny i podczas każdej iteracji aktualizuje wagi neuronów na podstawie losowo wybranego punktu danych. To prowadzi do organizacji mapy w taki sposób, aby neuronów odpowiadały różnym obszarom danych, co jest przydatne do analizy struktury danych i klasyfikacji. Algorytm jest stopniowo dostosowywany do danych wejściowych, aż do uzyskania stabilnej struktury mapy SOM.
